@@ -1,0 +1,108 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling with Animated Gradient Background */
+body {
+  margin: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to ensure it covers the full viewport */
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Clock Container */
+#clock-container {
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 5%; /* Use percentage for padding to make it responsive */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 90%; /* Use percentage for width */
+  max-width: 800px; /* Set a max-width for larger screens */
+}
+
+/* Clock Styling */
+#clock {
+  font-family: "Orbitron", monospace;
+  font-size: clamp(3rem, 10vw, 6.5rem); /* Responsive font size */
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #00fffc, 0 0 20px #00fffc, 0 0 40px #00fffc;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+}
+
+/* Date Styling */
+#date {
+  font-family: "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Responsive font size */
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  #clock-container {
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  #clock {
+    font-size: clamp(
+      2.5rem,
+      8vw,
+      4rem
+    ); /* Adjust font size for smaller screens */
+    letter-spacing: 3px;
+  }
+
+  #date {
+    font-size: clamp(
+      0.9rem,
+      2.5vw,
+      1.2rem
+    ); /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #clock {
+    font-size: clamp(
+      2rem,
+      6vw,
+      3rem
+    ); /* Further adjust font size for very small screens */
+    letter-spacing: 2px;
+  }
+
+  #date {
+    font-size: clamp(
+      0.8rem,
+      2vw,
+      1rem
+    ); /* Further adjust font size for very small screens */
+  }
+}
